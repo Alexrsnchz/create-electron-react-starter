@@ -1,9 +1,15 @@
 {
   "name": "create-electron-starter",
   "description": "An unofficial CLI to scaffold electron-vite projects",
-  "keywords": ["electron", "vite", "cli", "starter", "scaffold"],
+  "keywords": [
+    "electron",
+    "vite",
+    "cli",
+    "starter",
+    "scaffold"
+  ],
   "author": "Alexrsnchz",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "type": "module",
   "bin": {
