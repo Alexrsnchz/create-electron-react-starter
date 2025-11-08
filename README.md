@@ -9,7 +9,6 @@ An unofficial CLI tool to scaffold a new [**electron-vite**](https://electron-vi
 [![Downloads](https://img.shields.io/npm/dt/create-electron-starter?label=Downloads&labelColor=333333&color=27cfa8&style=flat&logoColor=ffffff)](https://www.npmjs.com/package/create-electron-starter)
 [![GitHub Stars](https://img.shields.io/github/stars/Alexrsnchz/create-electron-starter?label=Stars&labelColor=333333&color=27cfa8&style=flat&logoColor=ffffff)](https://github.com/Alexrsnchz/create-electron-starter/stargazers)
 [![Node](https://img.shields.io/node/v/create-electron-starter?label=Node&labelColor=333333&color=27cfa8&style=flat&logoColor=ffffff)](https://nodejs.org/)
-[![NPM](https://img.shields.io/npm/v/create-electron-starter?label=NPM&labelColor=333333&color=27cfa8&style=flat&logoColor=ffffff)](https://www.npmjs.com/)
 [![License](https://img.shields.io/npm/l/create-electron-starter?label=License&labelColor=333333&color=27cfa8&style=flat&logoColor=ffffff)](https://opensource.org/licenses/MIT)
 
 ## Installation
