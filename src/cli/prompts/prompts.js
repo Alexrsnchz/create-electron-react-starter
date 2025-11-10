@@ -1,11 +1,13 @@
+import { checkArgs, safePrompt } from './handlers.js';
 import { input, select } from '@inquirer/prompts';
 import { existsSync } from 'fs';
 
-/**
- * Asks the name of the project
- * @returns {Promise<Promise<string> & {cancel: () => void}>}
- */
+/* Asks the name of the project or takes it from
+the command's args */
 async function askProjectName() {
+  const name = await checkArgs();
+  if (name) return name;
+
   return input({
     message: 'Name of the project:',
     default: 'electron-vite-app',
@@ -22,10 +24,8 @@ async function askProjectName() {
   });
 }
 
-/**
- * Shows a list of frameworks to choose
- * @returns {Promise<Promise<string> & {cancel: () => void}>}
- */
+/* Shows a list of frameworks to choose
+and install */
 async function askFramework() {
   return select({
     message: 'Choose a framework:',
@@ -34,13 +34,10 @@ async function askFramework() {
   });
 }
 
-/**
- * Executes all the prompts
- * @returns {Promise<{projectName: Promise<string>&{cancel: (function(): void)}, framework: Promise<string>&{cancel: (function(): void)}}>}
- */
+/* Executes all the prompts */
 export async function executePrompts() {
-  const projectName = await askProjectName();
-  const framework = await askFramework();
+  const projectName = await safePrompt(askProjectName);
+  const framework = await safePrompt(askFramework);
 
   return { projectName, framework };
 }
