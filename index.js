@@ -19,8 +19,8 @@ async function runCLI() {
 
     // Installation process
     await cloneTemplate(projectDir);
-    await installDeps(answers.framework, answers.tailwind, pkgManager, projectDir);
-    await configureDeps(answers.framework, answers.tailwind, projectDir);
+    await installDeps(answers.framework, pkgManager, projectDir);
+    await configureDeps(answers.framework, projectDir);
 
     steps(answers.projectName, pkgManager);
   } catch (err) {
