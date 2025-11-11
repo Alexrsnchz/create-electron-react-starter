@@ -54,14 +54,14 @@ async function askTailwind() {
 const prompts = {
   projectName: askProjectName,
   framework: askFramework,
-  tailwind: askTailwind,
+  //tailwind: askTailwind,
 };
 
 /* Executes all the prompts */
 export async function executePrompts() {
   const answers = {};
 
-  for (const [key, fn] of prompts) {
+  for (const [key, fn] of Object.entries(prompts)) {
     answers[key] = await safePrompt(fn);
   }
 

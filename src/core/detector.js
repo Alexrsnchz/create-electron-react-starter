@@ -22,8 +22,8 @@ function detectPackageManager() {
 
 /* Gets the current directory and package manager
 when the user executes the CLI */
-export function getUserInfo() {
-  const projectDir = getProjectPath();
+export function getUserInfo(projectName) {
+  const projectDir = getProjectPath(projectName);
   const pkgManager = detectPackageManager();
 
   return { projectDir, pkgManager };

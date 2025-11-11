@@ -15,7 +15,7 @@ async function runCLI() {
     // Setup prompts
     const answers = await executePrompts();
     // Obtain project information
-    const { projectDir, pkgManager } = getUserInfo();
+    const { projectDir, pkgManager } = getUserInfo(answers.projectName);
 
     // Installation process
     await cloneTemplate(projectDir);
