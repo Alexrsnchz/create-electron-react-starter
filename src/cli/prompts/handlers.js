@@ -1,8 +1,25 @@
-import { readdir } from 'fs/promises';
+import { readdir, rm } from 'fs/promises';
+import path from 'path';
+import { failSpinner, startSpinner, successSpinner } from '../../utils/logger.js';
 import { askClearDirectory } from './prompts.js';
-import { existsSync } from 'fs';
 import chalk from 'chalk';
-import { directoryClear } from '../../core/remover.js';
+import { existsSync } from 'fs';
+
+/* Removes every file of the directory indicated */
+async function directoryClear(targetDir, files) {
+  try {
+    startSpinner('🚧  Removing existing files...');
+
+    for (const file of files) {
+      await rm(path.join(targetDir, file), { recursive: true, force: true });
+    }
+
+    successSpinner('Files removed successfully.');
+  } catch (err) {
+    failSpinner('Error removing files.');
+    throw err;
+  }
+}
 
 /* Checks if the current directory is empty,
 in which case, asks if the user wants to
