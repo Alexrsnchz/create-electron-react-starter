@@ -1,19 +1,10 @@
-const baseDeps = [];
+import { baseDeps, frameworkDeps } from './depsData.js';
 
-const baseDevDeps = ['electron', 'vite', 'electron-vite', 'typescript', '@types/node'];
-
-const frameworkDeps = {
-  react: {
-    deps: ['react', 'react-dom'],
-    devDeps: ['@vitejs/plugin-react-swc', '@types/react', '@types/react-dom'],
-  },
-};
-
-export function getDependencies(framework) {
-  const fwDeps = frameworkDeps[framework] || { deps: [], devDeps: [] };
+export function getDependencies(framework, packaging) {
+  const fw = frameworkDeps[framework] || { deps: [], devDeps: [] };
 
   return {
-    deps: [...baseDeps, ...fwDeps.deps],
-    devDeps: [...baseDevDeps, ...fwDeps.devDeps],
+    deps: [...baseDeps.deps, ...fw.deps],
+    devDeps: [...baseDeps.devDeps, ...fw.devDeps],
   };
 }

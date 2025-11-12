@@ -43,18 +43,9 @@ async function askFramework() {
   });
 }
 
-/* Asks if the user wants to install Tailwind CSS */
-async function askTailwind() {
-  return confirm({
-    message: 'Do you want to add Tailwind?',
-    default: false,
-  });
-}
-
 const prompts = {
   projectName: askProjectName,
   framework: askFramework,
-  //tailwind: askTailwind,
 };
 
 /* Executes all the prompts */
