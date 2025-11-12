@@ -22,7 +22,7 @@ export const app = `export default function App() {
   return (
     <div style={{ padding: '2rem', textAlign: 'center' }}>
       <h1>⚡ Electron + Vite + React</h1>
-      <p>Edit <code>src/renderer/App.jsx</code> and save to reload.</p>
+      <p>Thanks for using my template. Happy coding!</p>
     </div>
   );
 }`;
