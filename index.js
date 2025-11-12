@@ -19,7 +19,7 @@ async function runCLI() {
 
     // Installation process
     await cloneTemplate(projectDir);
-    await installDeps(answers.framework, answers.packaging, pkgManager, projectDir);
+    await installDeps(answers.framework, pkgManager, projectDir);
     await configureDeps(answers.framework, projectDir);
 
     steps(answers.projectName, pkgManager);

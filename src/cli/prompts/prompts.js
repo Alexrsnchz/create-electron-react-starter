@@ -38,8 +38,11 @@ and install */
 async function askFramework() {
   return select({
     message: 'Choose a framework:',
-    choices: [{ name: 'React', value: 'react' }],
-    default: 'react',
+    choices: [
+      { name: 'Vanilla', value: 'vanilla' },
+      { name: 'React', value: 'react' },
+    ],
+    default: 'vanilla',
   });
 }
 

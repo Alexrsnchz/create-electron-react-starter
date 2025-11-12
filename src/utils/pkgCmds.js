@@ -1,6 +1,6 @@
 export const installCmds = {
-  npm: { manager: ['install'], flag: '--save-dev' },
-  pnpm: { manager: ['add'], flag: '-D' },
-  yarn: { manager: ['add'], flag: '-D' },
-  bun: { manager: ['install'], flag: '--dev' },
+  npm: { cmd: ['install'], flag: '--save-dev' },
+  pnpm: { cmd: ['add'], flag: '-D' },
+  yarn: { cmd: ['add'], flag: '-D' },
+  bun: { cmd: ['install'], flag: '--dev' },
 };
